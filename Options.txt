@@ -1,2 +1,2 @@
-Killswitch = False
+Killswitch = True
 Anti Skidder = True
