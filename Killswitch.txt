@@ -1,0 +1,3 @@
+-- Killswitch -- False
+-- Anti Skidder -- True
+-- Anti Skidder WebHook -- False
