@@ -7,7 +7,4 @@ Make sure ArcadiaLauncher.exe and ArcadiaModule.dll are in the root folder of yo
 This version uses Arcadia Injector credits to its creators
 Arcadia Discord => (DELETED)
 
-Arcadia Injector has been updated by Zorara
-Zorara Discord => https://discord.gg/realzorara
-
 I would really appreciate it if you donate to the creators of the API. The links to their donation profile will be on the SpashAPI Discord.
