@@ -1,6 +1,6 @@
 title: "My Blog"
 description: "A personal blog about technology, projects, and ideas"
-baseurl: ""
+baseurl: "."
 url: ""
 permalink: /:year/:month/:day/:title/
 excerpt_separator: <!--more-->
