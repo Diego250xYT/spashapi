@@ -1,5 +1,51 @@
 ---
-title: "Ejemplo de Jekyll"
+layout: default
+title: Home
 ---
 
-{% include ejemplo.html %}
+<section class="hero">
+    <div class="container">
+        <h1 class="hero-title">{{ site.title }}</h1>
+        <p class="hero-description">{{ site.description }}</p>
+        <a href="{{ site.baseurl }}/blog" class="hero-cta">Browse Articles →</a>
+    </div>
+</section>
+
+<section class="recent-posts">
+    <div class="container">
+        <h2 class="section-title">Latest Posts</h2>
+        {% assign posts = site.posts %}
+        {% if posts.size > 0 %}
+        <div class="posts-grid">
+            {% for post in posts limit:6 %}
+            <article class="post-card">
+                {% if post.image and post.image != "" %}
+                <a href="{{ site.baseurl }}{{ post.url }}" class="post-card-image-link">
+                    <div class="post-card-image" style="background-image: url('{{ site.baseurl }}{{ post.image }}');"></div>
+                </a>
+                {% endif %}
+                <div class="post-card-body">
+                    <h3 class="post-card-title">
+                        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    <time class="post-card-date" datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </time>
+                    <p class="post-card-excerpt">
+                        {{ post.excerpt | strip_html | truncatewords: 35 }}
+                    </p>
+                    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read more →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% if site.posts.size > 6 %}
+        <div class="view-all-wrapper">
+            <a href="{{ site.baseurl }}/blog" class="btn-primary">View All Posts</a>
+        </div>
+        {% endif %}
+        {% else %}
+        <p class="no-posts">No posts yet. Check back soon!</p>
+        {% endif %}
+    </div>
+</section>

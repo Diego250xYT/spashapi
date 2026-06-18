@@ -1,0 +1,18 @@
+<nav class="navbar" role="navigation">
+    <div class="container nav-container">
+        <a href="{{ site.baseurl }}/" class="nav-logo">{{ site.title }}</a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation menu">
+        <div class="nav-overlay"></div>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </label>
+
+        <ul class="nav-links">
+            <li><a href="{{ site.baseurl }}/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+            <li><a href="{{ site.baseurl }}/blog" {% if page.url contains '/blog' %}class="active"{% endif %}>Blog</a></li>
+        </ul>
+    </div>
+</nav>
